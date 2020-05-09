@@ -1,3 +1,5 @@
 {
-  "item.examplemod.pancake": "Pancake"
+  "itemGroup.exampleTab": "Example Mod",
+  "item.examplemod.pancake": "Pancake",
+  "block.examplemod.pancake_block": "Pancake Block"
 }
