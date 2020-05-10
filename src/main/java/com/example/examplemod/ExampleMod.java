@@ -42,7 +42,7 @@ public class ExampleMod
     public static final ItemGroup TAB = new ItemGroup("exampleTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegistryHandler.PANCAKE.get());
+            return new ItemStack(RegistryHandler.PANCAKE_BLOCK_ITEM.get());
         }
     };
 }

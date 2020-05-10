@@ -3,6 +3,7 @@ package com.example.examplemod.util;
 import com.example.examplemod.ExampleMod;
 import com.example.examplemod.blocks.BlockItemBase;
 import com.example.examplemod.blocks.PancakeBlock;
+import com.example.examplemod.items.Foods;
 import com.example.examplemod.items.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -25,7 +26,11 @@ public class RegistryHandler {
     }
 
     //Oggetti
-    public static final RegistryObject<Item> PANCAKE = ITEMS.register("pancake", ItemBase::new);
+    public static final RegistryObject<Item> PANCAKE = ITEMS.register("pancake",
+            () -> new ItemBase(new Item.Properties()
+                    .group(ExampleMod.TAB)
+                    .food(Foods.PANCAKE)
+                    .maxStackSize(64)));
 
     //Blocchi
     public static final RegistryObject<Block> PANCAKE_BLOCK = BLOCKS.register("pancake_block", PancakeBlock::new);
