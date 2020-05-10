@@ -1,6 +1,12 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "examplemod:blocks/pancake_block"
+    "down": "examplemod:blocks/pancake_block_down",
+    "up": "examplemod:blocks/pancake_block_up",
+    "north": "examplemod:blocks/pancake_block",
+    "south": "examplemod:blocks/pancake_block",
+    "west": "examplemod:blocks/pancake_block",
+    "east": "examplemod:blocks/pancake_block",
+    "particle": "examplemod:blocks/pancake_block"
   }
 }
