@@ -1,11 +1,10 @@
 package com.example.examplemod.util;
 
 import com.example.examplemod.ExampleMod;
-import com.example.examplemod.blocks.BlockItemBase;
 import com.example.examplemod.blocks.PancakeBlock;
 import com.example.examplemod.items.Foods;
-import com.example.examplemod.items.ItemBase;
 import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -25,16 +24,13 @@ public class RegistryHandler {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    //Oggetti
-    public static final RegistryObject<Item> PANCAKE = ITEMS.register("pancake",
-            () -> new ItemBase(new Item.Properties()
-                    .group(ExampleMod.TAB)
-                    .food(Foods.PANCAKE)
-                    .maxStackSize(64)));
-
     //Blocchi
     public static final RegistryObject<Block> PANCAKE_BLOCK = BLOCKS.register("pancake_block", PancakeBlock::new);
 
-    //Oggetto blocco
-    public static final RegistryObject<Item> PANCAKE_BLOCK_ITEM = ITEMS.register("pancake_block", () -> new BlockItemBase(PANCAKE_BLOCK.get()));
+    //Oggetti
+    public static final RegistryObject<Item> PANCAKE = ITEMS.register("pancake",
+            () -> new Item(new Item.Properties().group(ExampleMod.TAB).food(Foods.PANCAKE)));
+
+    public static final RegistryObject<Item> PANCAKE_BLOCK_ITEM = ITEMS.register("pancake_block",
+            () -> new BlockItem(PANCAKE_BLOCK.get(), new Item.Properties().group(ExampleMod.TAB)));
 }
